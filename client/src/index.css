@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-LIGHT: '#fff';
+  --color-DARK: '#0F0F10';
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-DARK);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-DARK);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-DARK);
+}
+
+
+
+
+
+
