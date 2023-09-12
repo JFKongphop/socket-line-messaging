@@ -39,7 +39,6 @@ import type {
 } from './type/line-type';
 import type { AxiosResponse } from 'axios';
 
-
 const app = express();
 app.use(cors({
   origin: FRONTEND_URL
@@ -148,19 +147,6 @@ app.get('/chat/:userId', async (
   return res.status(200).json({ chats });
 });
 
-
-app.get('/user-lists', async (req, res) => {
-  const usersData = await getAllUsers();
-  const users = usersData.map((data) => {
-    return {
-      userId: data.userId,
-      displayName: data.displayName,
-      pictureUrl: data.pictureUrl
-    }
-  });
-  return res.status(200).json({ users });
-})
-
 app.post('/send-message/:userId', json(), async (
   req: CustomRequest<{ message: string }, { userId: string }>,
   res: Response
@@ -215,4 +201,3 @@ mongoose.connect(MONGO_URI)
 server.listen(4000, () => {
   console.log(`Running at port 4000`);
 });
-
